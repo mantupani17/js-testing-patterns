@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress bar</title>
+    <style>
+        .my-progress-bar{
+            margin-left: 25%;
+            width: 50%;
+            height: 10px;
+            /* background: lightgray; */
+            display: -webkit-box;
+        }
+
+        .my-progress-bar .my-progress-bar-span{
+            width: 17.4%;
+            background: lightgray;
+            height: 10px;
+            margin: 0px 10px 0px 0px;
+            border-radius: 25px;
+        }
+
+        .my-progress-bar .my-progress-bar-span div{
+            height: 10px;
+            border-radius: 25px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .my-progress-bar .my-progress-bar-span{
+                padding: 0px;
+                margin: auto;
+            }
+        }
+        .my-completion-label{
+            text-align: center;
+            letter-spacing: 0.1px;
+            line-height: 30px;
+            font-size: 11px;
+        }
+    </style>
+    <script src="design-patterns/progress-bar.js"></script>
+    <script src="design-patterns/http-module.js"></script>
+</head>
+<body>
+    <div class="my-container">
+        <div class="my-completion-label"></div>
+        <div class="my-progress-bar" id="progress-bar-container"></div>
+    </div>
+    
+</body>
+<script>
+    ProgressBar.init({
+        percentage: 66, 
+        numberOfBars: 5, 
+        bgColor:"red",
+        statusLabel: true,
+        isShow: true
+    });
+    ProgressBar.setPercentage(100);
+    ProgressBar.show(true)
+    var categories = [];
+    var subCategories = [];
+
+
+    function getMenuData(){
+        var menuList = {};
+        return new Promise(function(resolve, reject){
+            HTTPModule.getCategories()
+                .then(function(response){
+                    var data = response.data;
+                    // getAllSubCategoriesByCatId
+                    for (var key in data) {
+                        if (data.hasOwnProperty(key)) {
+                            var cat = data[key];
+                            categories.push(cat);
+                        }
+                    }
+                console.log(categories)
+                HTTPModule.getAllSubCategories()
+                .then(function(response){
+                    var subdata = response.data;
+                    for (let i = 0; i < categories.length; i++) {
+                        var cat = categories[i];
+                        var subCatList = [];
+                        menuList[cat.category] = {
+                            data:{},
+                            isValid: false,
+                            link: ''
+                        };
+                        if(subdata.length){
+                            for (var j = 0; j < subdata.length; j++) {
+                                var subCat = subdata[j];
+                                if(cat.category_id == subCat.category_id ){
+                                    menuList[cat.category].data[subCat.sub_category] = []
+                                    menuList[cat.category].isValid = true;
+                                }
+                            }
+                        }
+                        
+                    }
+                    resolve(menuList);
+                })
+            });
+        })
+    }
+
+    getMenuData().then(function(data){
+        console.log(data)
+    });
+
+
+
+
+    
+    // HTTPModule.getCategoryById(7)
+    // .then(function(response){
+    //     console.log(response)
+    // })
+</script>
+</html>

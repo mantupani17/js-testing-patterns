@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress bar</title>
+    <style>
+        .my-progress-bar{
+            margin-left: 25%;
+            width: 50%;
+            height: 10px;
+            /* background: lightgray; */
+            display: -webkit-box;
+        }
+
+        .my-progress-bar .my-progress-bar-span{
+            width: 17.4%;
+            background: lightgray;
+            height: 10px;
+            margin: 0px 10px 0px 0px;
+            /* border-radius: 25px; */
+        }
+
+        .my-progress-bar .my-progress-bar-span div{
+            height: 10px;
+            /* border-radius: 25px; */
+        }
+
+        @media only screen and (max-width: 600px) {
+            .my-progress-bar .my-progress-bar-span{
+                padding: 0px;
+                margin: auto;
+            }
+        }
+        .my-completion-label{
+            text-align: center;
+            letter-spacing: 0.1px;
+            line-height: 30px;
+            font-size: 11px;
+        }
+    </style>
+    <script src="design-patterns/progress-bar.js"></script>
+    <script src="design-patterns/http-module.js"></script>
+</head>
+<body>
+    <div class="my-container">
+        <div class="my-completion-label"></div>
+        <div class="my-progress-bar" id="progress-bar-container-1"></div>
+    </div>
+    <button id="click-to-increase">Click to increase</button>
+</body>
+<script>
+    ProgressBar.init({
+        selector:'progress-bar-container-1'
+    });
+    // ProgressBar.setPercentage(100);
+    ProgressBar.show(false)
+    
+</script>
+</html>

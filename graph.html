@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./plugins/d3.min.js"></script> -->
+    <script src="./plugins/d3.old.min.js"></script>
+    <script src="./data/graph-config.js"></script>
+    <script src="./data/offers.js"></script>
+    <style>
+        /* body {
+            font-family: "Arial", sans-serif;
+        }
+        
+        .bar {
+            fill: #5f89ad;
+        }
+        
+        .axis {
+            font-size: 13px;
+        }
+        
+        .axis path,
+        .axis line {
+            fill: none;
+            display: none;
+        }
+        
+        .label {
+            font-size: 13px;
+        }
+
+        .tick{
+
+        } */
+.axis text {
+  font: 10px sans-serif;
+}
+.axis line,
+.axis path {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.path-line {
+  fill: none;
+  stroke: yellow;
+  stroke-width: 1.5px;
+}
+svg {
+  background: #f0f0f0;
+}
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 200px;
+    height: 100px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: #ffff;	
+    border: 1px solid black;		
+    /* border-radius: 8px;			 */
+    pointer-events: none;			
+}
+
+.tool-tip-table{
+    border: 1px solid lightgray;
+    border-radius: unset;
+    width: 100%;
+    height: 100%;
+    border-spacing: 3px;
+}
+.tool-tip-table tr{
+
+}
+.value-td{
+    border-left: 1.2px dotted lightgray;
+}
+.lemon-green{
+    background-color: #bbd531;
+    height: 10px;
+    width: 10px;
+    display: block;
+    margin-left: 2px;
+}
+.light-green{
+    background-color: #66b846;
+    height: 10px;
+    width: 10px;
+    display: block;
+    margin-left: 2px;
+}
+.green{
+    background-color:#0a7139;
+    height: 10px;
+    width: 10px;
+    display: block;
+    margin-left: 2px;
+}
+.violet{
+    background-color: #bc82f2;
+    height: 10px;
+    width: 10px;
+    display: block;
+    margin-left: 2px;
+}
+    </style>
+</head>
+<body>
+    <div id="graphic"></div>
+    <div id="graphic-legends"></div>
+    <script src="./design-patterns/handle-graph.js"></script>
+</body>
+</html>

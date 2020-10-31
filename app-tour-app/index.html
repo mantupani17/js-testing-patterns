@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #start{
+            background-color: red;
+            color: white;
+            width: 80px;
+            height: 40px;
+        }
+        #part-one{
+            background-color: rgb(139, 113, 209);
+            color: white;
+            width: 80px;
+            height: 40px;
+        }
+        #part-two{
+            background-color: black;
+            color: white;
+            width: 80px;
+            height: 40px;
+        }
+        #end{
+            background-color: gray;
+            color: white;
+            width: 80px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex;">
+        <div id="start">Start</div>
+    <div id="part-one">App Part one</div>
+    <div id="part-two">App Part two</div>
+    <div id="end">End</div>
+    </div>
+    
+</body>
+<!-- <script src="./guide.me.js"></script> -->
+<script src="./guide.me.js"></script>
+<link rel="stylesheet" href="./guide.me.css">
+<script>
+    // var GuideMe = new GuideMeNew({
+    //     data:[
+    //         {selector:'start',message:'Application started from here'},
+    //         {selector:'part-one',message:'Application Part one'},
+    //         {selector:'part-two',message:'Application Part two'},
+    //         {selector:'end',message:'Application ended'}
+    //     ], 
+    //     options: {
+    //         isAlreadySeen:false,
+    //         theme:'dark'
+    //     }
+    // });
+    // GuideMe.on('next', function(){
+
+    // })
+    // GuideMe.on('prev', function(){
+
+    // })
+
+    
+    GuideMe([
+        {
+            selector:'start',
+            message:'Application started from here'
+        },
+        {
+            selector:'part-one',
+            message:'Application Part one'
+        },
+        {
+            selector:'part-two',
+            message:'Application Part two'
+        },
+        {
+            selector:'end',
+            message:'Application ended'
+        }
+    ], {
+        isAlreadySeen:false,
+        theme:'dark'
+    });
+    
+</script>
+</html>

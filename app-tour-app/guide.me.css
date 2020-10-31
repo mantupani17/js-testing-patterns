@@ -1,0 +1,73 @@
+/* light theme styles */
+body .guide-me-info{
+    padding: 8px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    position: absolute;
+    top: 13px;
+    max-width: 400px;
+    box-shadow: 3px 3px 5px 6px #bcafaf;
+    /* left: 50px; */
+    font-family: monospace;
+    background-color: lightgray;
+}
+
+body .guide-me-info-bottom-content{
+    text-align: right;
+}
+
+body .guide-me-info-content{
+    max-width: 350px;
+    width: 312px;
+}
+
+.guide-me-info .guide-me-prev-btn{
+
+} 
+.guide-me-info .guide-me-next-btn{
+    
+} 
+
+/* common styles */
+.guide-btn{
+    padding: 0px 6px 0px 6px;
+    font-family: cursive;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 4px;
+    cursor: pointer;
+}
+
+/* Dark theme styles */
+body .dark-guide-me-info{
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 4px;
+    position: absolute;
+    top: 13px;
+    max-width: 400px;
+    box-shadow: 3px 3px 5px 6px lightgrey;
+    left: 50px;
+    background-color: black;
+    color: white;
+    font-family: monospace;
+}
+
+body .dark-guide-me-info-bottom-content{
+    text-align: right;
+}
+
+body .dark-guide-me-info-content{
+    max-width: 350px;
+    width: 312px;
+}
+
+.guide-me-info .dark-guide-me-prev-btn{
+
+} 
+.guide-me-info .dark-guide-me-next-btn{
+    
+} 
+
+
+
