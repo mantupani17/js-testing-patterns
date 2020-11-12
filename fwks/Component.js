@@ -23,7 +23,7 @@
         return this.elem;
     }
 
-    Component.prototype.deregister = function(){
+    Component.prototype.deregister = function(){ 
         this.elem.remove();
     }
 
