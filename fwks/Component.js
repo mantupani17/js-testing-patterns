@@ -1,9 +1,17 @@
 (function(document, window){
 
-    function Component(component, content, parentElement){
+    /**
+     * @description this method is the constructor which accept the following params
+     * @param {string} component 
+     * @param {string} content 
+     * @param {domElement} parentElement 
+     * @param {options} options 
+     */
+    function Component(component, content, parentElement, options){
         this.content = content;
         this.component = component;
         this.parentElement = parentElement;
+        this.options = options;
         this.elem = null; 
     }
 
@@ -12,12 +20,10 @@
         ele.innerHTML = this.content;
         this.parentElement.append(ele);
         this.elem = ele;
-        console.log('Component registered');
         return this.elem;
     }
 
     Component.prototype.deregister = function(){
-        console.log('Component destroyed');
         this.elem.remove();
     }
 

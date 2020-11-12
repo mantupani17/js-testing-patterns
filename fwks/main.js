@@ -1,15 +1,64 @@
-(function(document, window, Component){
-    var newComponent = new Component('div','hello', document.body);
-    var el = newComponent.register();
-    console.log(el.style)
-    newComponent.setAttribute('style', 'color:blue;font-size:16px;');
-    var newComponent1 = new Component('div', 'fuck you', el);
-    newComponent1.register();
-    newComponent1.setAttribute('style', 'color:red;font-size:16px;');
-    var newComponent2 = new Component('div', 'What do you mean?', el);
-    newComponent2.register();
-    newComponent2.setAttribute('style', 'color:green;font-size:12px;');
-    // setTimeout(function(e){
-    //     // newComponent.deregister();
-    // },1000)
-})(document, window, window.Component)
+(function(document, window, Component, GroupGenerator){
+    var groups = {
+        screen1:{
+            items:{
+                'input_text':{
+                    dom_type:'input',
+                    type:'text',
+                    placeholder:'Please enter name',
+                    text: '',
+                    order:2,
+                    value:''
+                },
+                'label_1':{
+                    dom_type:'label',
+                    type:'',
+                    placeholder:'',
+                    text: 'How are you?',
+                    order:1,
+                    value:''
+                },
+                'input_number':{
+                    dom_type:'input',
+                    type:'number',
+                    placeholder:'Please select the age',
+                    text: '',
+                    order:3,
+                    value:''
+                }
+            },
+            screen_title:'Screen one',
+            id: 1
+        },
+        screen2:{
+            items:{
+                'label_1':{
+                    dom_type:'label',
+                    type:'',
+                    placeholder:'',
+                    text: 'Screen Two',
+                    order:1,
+                    value:''
+                }
+            },
+            screen_title:'Screen two',
+            id: 2
+        },
+        screen3:{
+            items:{
+                'label_1':{
+                    dom_type:'label',
+                    type:'',
+                    placeholder:'',
+                    text: 'Screen Three',
+                    order:1,
+                    value:''
+                }
+            },
+            screen_title:'Screen three',
+            id: 3
+        }
+    };
+ 
+    var groupGenerator = new GroupGenerator(groups);
+})(document, window, window.Component, window.GroupGenerator)
