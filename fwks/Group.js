@@ -26,9 +26,19 @@
         var parentDom = document.createElement('div');
         parentDom.id = id;
         parentDom.classList.add('group_container_'+id);
+        parentDom.classList.add('group_container');
         this.parentElement.appendChild(parentDom);
         return parentDom;
     }
+
+    function renderSubmitButton(isSubmitButtonDisplay, id, parentDom){
+        if(isSubmitButtonDisplay){
+            const submitBtn = document.createElement('button');
+            submitBtn.innerHTML = 'Click';
+            submitBtn.classList.add('submit_'+id);
+            parentDom.appendChild(submitBtn);
+        }
+    }   
 
     window.GroupGenerator = GroupGenerator;
 

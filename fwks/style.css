@@ -1,0 +1,25 @@
+.group_container{
+    margin-top: 10px;
+    text-align: center;
+    background: lightgray;
+    padding: 7px;
+}
+
+.item_container{
+    padding: 4px;
+    height: auto;
+}
+
+.label-type{
+
+}
+
+.input-type{
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #9e9999;
+}
+
+.component-title{
+    
+}

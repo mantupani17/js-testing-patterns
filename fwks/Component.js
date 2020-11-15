@@ -17,6 +17,9 @@
 
     Component.prototype.register = function(){
         var ele  = document.createElement(this.component);
+        if(this.component == 'label'){
+            ele  = document.createElement('span');
+        }
         ele.innerHTML = this.content;
         this.parentElement.append(ele);
         this.elem = ele;

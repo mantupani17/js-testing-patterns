@@ -8,7 +8,12 @@
                     placeholder:'Please enter name',
                     text: '',
                     order:2,
-                    value:''
+                    value:'',
+                    class:'input-type',
+                    label:{
+                        text:'Please enter name: ',
+                        color:'red'
+                    }
                 },
                 'label_1':{
                     dom_type:'label',
@@ -16,7 +21,12 @@
                     placeholder:'',
                     text: 'How are you?',
                     order:1,
-                    value:''
+                    value:'',
+                    class:'label-type',
+                    label:{
+                        text:'',
+                        color:'red'
+                    }
                 },
                 'input_number':{
                     dom_type:'input',
@@ -24,7 +34,12 @@
                     placeholder:'Please select the age',
                     text: '',
                     order:3,
-                    value:''
+                    value:'',
+                    class:'input-type',
+                    label:{
+                        text:'Please enter age: ',
+                        color:'red'
+                    }
                 }
             },
             screen_title:'Screen one',
@@ -38,7 +53,12 @@
                     placeholder:'',
                     text: 'Screen Two',
                     order:1,
-                    value:''
+                    value:'',
+                    class:'label-type',
+                    label:{
+                        text:'',
+                        color:'red'
+                    }
                 }
             },
             screen_title:'Screen two',
@@ -52,7 +72,12 @@
                     placeholder:'',
                     text: 'Screen Three',
                     order:1,
-                    value:''
+                    value:'',
+                    class:'label-type',
+                    label:{
+                        text:'Hello : ',
+                        color:'red'
+                    }
                 }
             },
             screen_title:'Screen three',
@@ -61,4 +86,4 @@
     };
  
     var groupGenerator = new GroupGenerator(groups);
-})(document, window, window.Component, window.GroupGenerator)
+})(document, window, window.Component, window.GroupGenerator)   
